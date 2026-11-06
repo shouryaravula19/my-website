@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --evergreen: #1F3A2E;
+  --evergreen-deep: #16291F;
+  --stone: #EFE9DC;
+  --paper: #FAF8F3;
+  --brass: #B08D57;
+  --brass-light: #D4B785;
+  --ink: #24231F;
+  --ink-soft: #52503f;
+  --rule: #d8d0bd;
+
+  --display: 'Fraunces', serif;
+  --body: 'Work Sans', sans-serif;
+
+  --max-width: 920px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--evergreen);
+}
+
+a:hover {
+  color: var(--brass);
+}
+
+/* ---------- Header / Nav ---------- */
+
+header.site-header {
+  background: var(--evergreen);
+  padding: 22px 0;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.site-name {
+  color: var(--paper);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+nav.site-nav a {
+  color: var(--stone);
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-left: 28px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+nav.site-nav a:hover,
+nav.site-nav a.active {
+  color: var(--brass-light);
+  border-bottom-color: var(--brass-light);
+}
+
+/* ---------- Layout wrappers ---------- */
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section {
+  padding: 56px 0;
+}
+
+section + section {
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- Headings ---------- */
+
+h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 2.6rem;
+  line-height: 1.15;
+  margin: 0 0 18px;
+  color: var(--evergreen-deep);
+}
+
+h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--evergreen-deep);
+  margin: 0 0 16px;
+}
+
+h2.section-sub {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+p {
+  max-width: 68ch;
+  color: var(--ink);
+}
+
+/* ---------- Hero (home page) ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 64px;
+}
+
+.hero-portrait {
+  background: var(--paper);
+  border: 1px solid var(--brass);
+  padding: 10px;
+}
+
+.hero-portrait svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-kicker {
+  font-family: var(--display);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+/* ---------- Two-column body (second page) ---------- */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.split figure {
+  margin: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 8px;
+}
+
+.split figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.split figcaption {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 10px 6px 2px;
+}
+
+/* ---------- Lists ---------- */
+
+ul.reasons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.reasons li {
+  position: relative;
+  padding: 14px 0 14px 28px;
+  border-bottom: 1px solid var(--rule);
+}
+
+ul.reasons li:first-child {
+  border-top: 1px solid var(--rule);
+}
+
+ul.reasons li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 10px;
+  height: 10px;
+  background: var(--brass);
+  border-radius: 50%;
+}
+
+ul.reasons strong {
+  font-family: var(--display);
+  font-weight: 500;
+  color: var(--evergreen-deep);
+}
+
+/* ---------- Chart section ---------- */
+
+.chart-wrap {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 28px 28px 20px;
+}
+
+#chart {
+  width: 100%;
+}
+
+.chart-caption {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: 10px;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--evergreen-deep);
+  color: var(--paper);
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  font-family: var(--body);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.contact-list a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--brass);
+  padding-bottom: 2px;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  text-align: center;
+  padding: 28px 0 40px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .hero,
+  .split {
+    grid-template-columns: 1fr;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  nav.site-nav a {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}
